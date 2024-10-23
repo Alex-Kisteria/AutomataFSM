@@ -1,4 +1,4 @@
-# AutomataFSM
+# Description of my FSM MACHINE
 
 This program is a simple Finite State Machine (FSM) designed as a commuting guide for my younger sister to help her learn how to get from Lapu-Lapu to CIT. It allows the user to select various modes of transportation, and based on their choices, the FSM will either end at a "final state" (reaching the destination) or a "dead state" (invalid route).
 
