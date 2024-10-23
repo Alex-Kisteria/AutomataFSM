@@ -1,9 +1,13 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
     int state = 0; 
     char input;
+    string flow[100];  // pang store sa used transportation
+    int index = 0;     // index para sa flow array
+    int totalFare = 0; // sum para sa total fare
 
     // Transition table
     int table[6][4] = {
@@ -25,21 +29,33 @@ int main() {
 
         if (input == 'x') {
             cout << "Analyzing your route...\n";
-            break;  // Exit the loop
+            break;  
         }
 
-        int inputColumn = -1;  //used for the column
+        int inputColumn = -1;  //used para sa column
 
-        // Determine input column based on input
+    
         switch (input) {
             case 'a': 
-                inputColumn = 0; break;  // column 0 para sa motor
+                inputColumn = 0;
+                flow[index++] = "motor";  
+                totalFare += 50;
+                break;  
             case 'b': 
-                inputColumn = 1; break;  // column 1 para sa jeep
+                inputColumn = 1;
+                flow[index++] = "jeep";  
+                totalFare += 13;
+                break;  
             case 'c': 
-                inputColumn = 2; break;  // column 2 para sa ferry
+                inputColumn = 2;
+                flow[index++] = "ferry";  
+                totalFare += 30;
+                break;  
             case 'd': 
-                inputColumn = 3; break;  // column 3 para sa van
+                inputColumn = 3;
+                flow[index++] = "van"; 
+                totalFare += 55;
+                break;  
             default:
                 cout << "Invalid input. Try again.\n";
                 continue;
@@ -47,15 +63,25 @@ int main() {
 
         // Move sa next state based sa current state and input
         state = table[state][inputColumn];
-
     }
     
-    // Check final or dead state
-        if (state == 5) {
-            cout << "You have successfully reached your destination!\n";
-        } else {
-            cout << "You have reached a dead state. You took an invalid route.\n";
+    //loop para sa used transportation
+    for (int i = 0; i < index; ++i) {
+        cout << flow[i];
+        if (i != index - 1) {
+            cout << " => ";  
         }
+    }
+    cout << " => done!\n";
+
+    // Check if final or dead state
+    if (state == 5) {
+        cout << "You have successfully reached your destination!\n";
+    } else {
+        cout << "You have reached a dead state. You took an invalid route.\n";
+    }
+    
+    cout << "Your total fare will be: P" << totalFare << ".";
 
     return 0;
 }
