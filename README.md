@@ -5,7 +5,7 @@ This program is a simple Finite State Machine (FSM) designed as a commuting guid
 Along the way, the program keeps track of the transportation modes used and calculates the total fare based on the choices made. At the end of the journey, it provides a summary of the chosen route and the total fare.
 
 
-# Modes and States
+# Modes and States (DFA)
 | STATE | a | b | c | d |
 |-------|---|---|---|---|
 | q0    | 1 | 4 | 4 | 4 |
