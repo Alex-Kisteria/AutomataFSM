@@ -7,12 +7,12 @@ Along the way, the program keeps track of the transportation modes used and calc
 
 # Modes and States
 | STATE | a | b | c | d |
-| q0 | 1 | 4 | 4 | 4 |
-| q1 | 5 | 5 | 2 | 3 |
-| q2 | 5 | 5 | 1 | 3 |
-| q3 | 5 | 5 | 4 | 4 |
-| q4 | 4 | 4 | 4 | 4 |
-| q5 | 4 | 4 | 4 | 4 |
+| q0    | 1 | 4 | 4 | 4 |
+| q1    | 5 | 5 | 2 | 3 |
+| q2    | 5 | 5 | 1 | 3 |
+| q3    | 5 | 5 | 4 | 4 |
+| q4    | 4 | 4 | 4 | 4 |
+| q5    | 4 | 4 | 4 | 4 |
 
 - Transportation Modes: The user can choose from four modes of transportation: motor ('a'), jeep ('b'), ferry ('c'), and van ('d').
 -FSM States: The program operates with six states:
